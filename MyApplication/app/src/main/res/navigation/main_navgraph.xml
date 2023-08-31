@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navgraph"
+    app:startDestination="@id/companiesListFragment">
+
+    <fragment
+        android:id="@+id/companiesListFragment"
+        android:name="com.utn.myapplication.fragments.CompaniesListFragment"
+        android:label="fragment_companies_list"
+        tools:layout="@layout/fragment_companies_list" >
+        <action
+            android:id="@+id/action_companiesListFragment_to_companyDetailsFragment"
+            app:destination="@id/companyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companyDetailsFragment"
+        android:name="com.utn.myapplication.fragments.CompanyDetailsFragment"
+        android:label="fragment_company_details"
+        tools:layout="@layout/fragment_company_details" >
+        <argument
+            android:name="company"
+            app:argType="com.utn.myapplication.models.Company" />
+    </fragment>
+</navigation>
